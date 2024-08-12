@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn --version'
+                sh 'mvn install'
             }
         }
         // Stage 3: Deploy
