@@ -1,19 +1,21 @@
 pipeline {
     agent any
+ 
     stages {
         // Stage 1: Initialize
-        stage('Build with Maven') {
+        stage('Initialize') {
             steps {
-                echo 'Builduing with Maven...'
+                echo 'Initializing the pipeline...'
             }
         }
+ 
         // Stage 2: Build
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn install'
             }
         }
+ 
         // Stage 3: Deploy
         stage('Deploy') {
             steps {
@@ -21,6 +23,7 @@ pipeline {
             }
         }
     }
+ 
     post {
         always {
             echo 'Pipeline completed!'
